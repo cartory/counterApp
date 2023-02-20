@@ -1,34 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import "./app.css"
 
-function App() {
-  const [count, setCount] = useState(0)
+import { useState } from "react"
 
-  return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+import { Option, icons } from "./widgets/option/option"
+import { Penguin, baloons } from "./widgets/penguin/penguin"
+
+export const App = () => {
+	const [baloon, setBaloon] = useState(baloons.hello)
+
+	return (
+		<div className="app">
+			<Penguin baloon={baloon} setBaloon={setBaloon} />
+			<div className="flex">
+				<div className="textbox">
+					<p>textbox</p>
+				</div>
+			</div>
+			<div className="flex" style={{ gap: 15 }}>
+				{Object.keys(icons).map((icon) => {
+					return (
+						<Option
+							key={icon}
+							icon={icons[icon]}
+							onClick={() => {
+								const baloonIcon = baloons[icon]
+								
+								if (!!baloonIcon) {
+									setBaloon(baloonIcon)
+									document.getElementById("penguin").click()
+								}
+							}}
+						/>
+					)
+				})}
+			</div>
+		</div>
+	)
 }
-
-export default App
