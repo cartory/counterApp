@@ -1,0 +1,31 @@
+div > .penguin {
+	border-radius: 100%;
+	background-color: whitesmoke;
+	padding: 5px 5px 13px 5px;
+}
+
+.penguin {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+	animation: breathe 0.3s ease alternate-reverse infinite;
+}
+
+.penguin:hover {
+	cursor: pointer;
+}
+
+.jump {
+	transform: translateY(-5%);
+}
+
+@keyframes breathe {
+	from {
+		transform: none;
+	}
+
+	to {
+		transform: translateY(-2%);
+	}
+}

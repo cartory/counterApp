@@ -1,0 +1,24 @@
+.option {
+	padding: 15px;
+	border-radius: 100%;
+	background-color: #f0f0f099;
+	animation: pulse 0.5s ease alternate-reverse infinite;
+}
+
+.option-container:hover {
+	cursor: pointer;
+	border-radius: 100%;
+	transition: all .3s ease;
+	background-color: #f0f0f099;
+	transform: scale(1.15) rotateZ(-3deg);
+}
+
+@keyframes pulse {
+	from {
+		transform: none;
+	}
+
+	to {
+		transform: scale(1.05);
+	}
+}
