@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import "./penguin.css"
 
@@ -37,18 +37,22 @@ export const Penguin = ({ baloon = baloons.hello, setBaloon }) => {
 
 	return (
 		<div>
+			<div id="sound" onClick={playReaction} hidden />
 			<div
 				id="penguin"
 				className="flex"
-				onClick={playReaction}
+				onClick={() => {
+					setBaloon(happy)
+					playReaction().finally()
+				}}
 				style={{
 					flexDirection: "column",
 				}}
 			>
-				<div>{!baloon ? <div style={{ height: 100 }} /> : <img src={baloon} height={100} alt="#" />}</div>
+				<div>{!baloon ? <div style={{ height: 100 }} /> : <img src={baloon} height={100} alt="penguin.png" />}</div>
 				<div>
 					<div className="penguin">
-						<img src={penguin} height={200} alt="#" />
+						<img id="img-penguin" src={penguin} height={200} alt="#" />
 					</div>
 				</div>
 			</div>

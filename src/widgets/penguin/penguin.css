@@ -1,7 +1,7 @@
 div > .penguin {
+	padding: 0;
 	border-radius: 100%;
-	background-color: whitesmoke;
-	padding: 5px 5px 13px 5px;
+	background-color: white;
 }
 
 .penguin {
