@@ -53,7 +53,7 @@ export const App = () => {
 		}
 
 		if (icon === "wait") {
-			setWords(["I hope you enjoy it", "by pedro.caricari ☺️","#madeWithLove"])
+			setWords(["I hope you enjoy it", "by pedro.caricari ☺️", "#madeWithLove"])
 		}
 
 		if (!!baloonIcon) {
@@ -67,7 +67,7 @@ export const App = () => {
 	return (
 		<>
 			<Snow />
-			<div className="app">
+			<div className="app flex">
 				<Penguin baloon={baloon} setBaloon={setBaloon} />
 				<Textbox words={words} setWords={setWords} />
 				<div className="flex" style={{ gap: 15 }}>
