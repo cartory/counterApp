@@ -15,11 +15,11 @@ import quest from "../../assets/gifs/quest.gif"
 const reaction = new Audio(soundReaction)
 
 export const baloons = {
-	wait,
 	love,
 	happy,
 	hello,
-	music,
+	play: music,
+	wait,
 	quest,
 }
 

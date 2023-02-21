@@ -1,29 +1,24 @@
 import "./textbox.css"
+
 import soundReaction from "../../assets/audio/reaction.mp3"
 
-import { useState } from "react"
-import { Typewriter } from "react-simple-typewriter"
-
-const defaultText = [
-	// defaultText
-	"I hope you enjoy this litle penguin, My name is Charlie  #madeWithLove",
-	"Please press any option #aboutMe #loveCounter #changeMusic",
-]
+export const defaultText = ["Please press any option #forYou #loveCounter #playMusic"]
 
 const sound = new Audio(soundReaction)
 
-export const Textbox = ({ text = defaultText }) => {
-	const [words, setWords] = useState(text)
-
+export const Textbox = ({ words = defaultText, setWords }) => {
 	const handleWords = async () => {
 		setWords(defaultText)
+		document.getElementById("sound").click()
 		sound.load()
 		await sound.play()
 	}
 
 	return (
 		<div className="textbox" onClick={handleWords}>
-			<Typewriter words={words} typeSpeed={30} deleteSpeed={15} />
+			{words.map((word, index) => (
+				<p key={index}>{word}</p>
+			))}
 		</div>
 	)
 }
