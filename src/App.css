@@ -24,23 +24,3 @@ body {
 	align-items: center;
 	justify-content: center;
 }
-
-@keyframes bounce {
-	from {
-		transform: none;
-	}
-
-	to {
-		box-shadow: 0 0 0 3px #80808033;
-	}
-}
-
-@keyframes bounceArrow {
-	from {
-		transform: none;
-	}
-
-	to {
-		border-top: 8px solid #80808033;
-	}
-}
