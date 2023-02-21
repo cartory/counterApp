@@ -10,15 +10,5 @@
 	<body>
 		<div id="root"></div>
 		<script type="module" src="/src/main.jsx"></script>
-		<script>
-			const music = new Audio("./src/assets/audio/takeOnme8bits.mp3")
-
-			music.loop = true
-			music.autoplay = true
-			music.playbackRate = 1.03
-
-			document.addEventListener("DOMContentLoaded", () => music.load())
-			document.addEventListener("click", async () => await music.play())
-		</script>
 	</body>
 </html>
